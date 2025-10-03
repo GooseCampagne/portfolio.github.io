@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0b7285">
+  <meta name="msapplication-navbutton-color" content="#0b7285">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>Portfolio Personal</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -182,6 +185,11 @@
 
     function updateThemeIcon(theme) {
       themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      
+      // Update theme color for Safari
+      const themeColor = theme === 'dark' ? '#20c997' : '#0b7285';
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', themeColor);
+      document.querySelector('meta[name="msapplication-navbutton-color"]').setAttribute('content', themeColor);
     }
   </script>
 </body>
