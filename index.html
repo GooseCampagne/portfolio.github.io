@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-element">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#ffffff">
   <meta name="msapplication-navbutton-color" content="#ffffff">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Portfolio Personal</title>
+  <title data-lang="title">Portfolio Personal</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,12 +19,12 @@
     <nav class="nav-container">
       <div class="nav-brand">
         <h1>Gustavo Campagne</h1>
-        <p class="profession">Desarrollador</p>
+        <p class="profession" data-lang="profession">Desarrollador</p>
       </div>
       <ul class="nav-links">
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#about" data-lang="nav_about">Sobre mí</a></li>
+        <li><a href="#projects" data-lang="nav_projects">Proyectos</a></li>
+        <li><a href="#contact" data-lang="nav_contact">Contacto</a></li>
       </ul>
     </nav>
   </header>
@@ -32,11 +32,11 @@
   <main>
     <section id="about" class="hero">
       <div class="container">
-        <h2>Sobre mí</h2>
-        <p>Soy Gustavo, egresado de TSU en Tecnologías de la Información e Ingeniería en Desarrollo y Gestión de Software. Tengo experiencia en frontend y backend, con dominio de bases de datos relacionales y no relacionales (MySQL, PostgreSQL, MongoDB) y tecnologías como C#, .NET, JavaScript, TypeScript, Angular, React, Node.js, Python, React Native, AWS, Git y Docker. Actualmente, estoy aprendiendo C++ para ampliar mis habilidades en desarrollo.</p>
+        <h2 data-lang="about_title">Sobre mí</h2>
+        <p data-lang="about_description">Soy Gustavo, egresado de TSU en Tecnologías de la Información e Ingeniería en Desarrollo y Gestión de Software. Tengo experiencia en frontend y backend, con dominio de bases de datos relacionales y no relacionales (MySQL, PostgreSQL, MongoDB) y tecnologías como C#, .NET, JavaScript, TypeScript, Angular, React, Node.js, Python, React Native, AWS, Git y Docker. Actualmente, estoy aprendiendo C++ para ampliar mis habilidades en desarrollo.</p>
         
         <div class="skills">
-          <h3>Habilidades técnicas</h3>
+          <h3 data-lang="skills_title">Habilidades técnicas</h3>
           <div class="tech-badges">
             <span class="badge">Java</span>
             <span class="badge">TypeScript</span>
@@ -63,50 +63,52 @@
 
     <section id="projects" class="projects">
       <div class="container">
-        <h2>Proyectos</h2>
+        <h2 data-lang="projects_title">Proyectos</h2>
         <div class="projects-grid">
           <article class="project-card">
-            <h3>Steam stats</h3>
-            <p>Sitio web para ver las estadisticas de un usuario de Steam</p>
-            <div class="tech-list">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">NodeJS</span>
-              <span class="tech-tag">Steam API</span>
-              <span class="tech-tag">CSS</span>
+            <h3 data-lang="project1_title">Steam-Tracker</h3>
+            <div class="project-card-content">
+              <p data-lang="project1_description">Sitio web para ver las estadísticas de un usuario de Steam</p>
+              <div class="tech-list">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">NodeJS</span>
+                <span class="tech-tag">Steam API</span>
+                <span class="tech-tag">In development</span>
+                
+              </div>
             </div>
             <div class="project-links">
-              <a href="#" class="btn btn-primary">Ver Demo</a>
-              <a href="#" class="btn btn-secondary">Repositorio</a>
+              <a href="https://steam-tracker-two.vercel.app/" class="btn btn-primary" data-lang="btn_demo">Ver Demo</a>
             </div>
           </article>
 
           <article class="project-card">
-            <h3>...</h3>
-            <p>....</p>
-            <div class="tech-list">
-              <span class="tech-tag">..</span>
-              <span class="tech-tag">..</span>
-              <span class="tech-tag">..</span>
-              <span class="tech-tag">..</span>
+            <h3 data-lang="project2_title">DiCTSA WEB</h3>
+            <div class="project-card-content">
+              <p data-lang="project2_description">Sitio web corporativo para la empresa DiCTSA con diseño moderno y responsivo</p>
+              <div class="tech-list">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
             </div>
             <div class="project-links">
-              <a href="#" class="btn btn-primary">Ver Demo</a>
-              <a href="#" class="btn btn-secondary">Repositorio</a>
+              <a href="https://dictsa.com/" class="btn btn-primary" data-lang="btn_demo">Ver Demo</a>
             </div>
           </article>
 
           <article class="project-card">
-            <h3>......</h3>
-            <p>.....</p>
-            <div class="tech-list">
-              <span class="tech-tag">..</span>
-              <span class="tech-tag">..</span>
-              <span class="tech-tag">..</span>
-              <span class="tech-tag">...js</span>
+            <h3 data-lang="project3_title">Próximos proyectos</h3>
+            <div class="project-card-content">
+              <p data-lang="project3_description">Actualmente trabajando en nuevas ideas y proyectos innovadores para ampliar mi portafolio</p>
+              <div class="tech-list">
+                <span class="tech-tag" data-lang="tag_development">En desarrollo</span>
+               
+             
+              </div>
             </div>
             <div class="project-links">
-              <a href="#" class="btn btn-primary">Ver Demo</a>
-              <a href="#" class="btn btn-secondary">Repositorio</a>
+              <a  class="btn btn-primary" data-lang="btn_demo">Not available</a>
             </div>
           </article>
         </div>
@@ -115,9 +117,9 @@
 
     <section id="contact" class="contact">
       <div class="container">
-        <h2>Contacto</h2>
+        <h2 data-lang="contact_title">Contacto</h2>
         <div class="contact-info">
-            <p><a href="mailto:gustavodante202@gmail.com" aria-label="Enviar email">gustavodante202@gmail.com</a></p>
+            <p><a href="mailto:gustavodante202@gmail.com" aria-label="Enviar email">send email</a></p>
           <div class="social-links">
             <a href="https://github.com/GooseCampagne" aria-label="Perfil de GitHub" class="social-icon github">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -129,14 +131,9 @@
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
-            <a href="https://x.com/" aria-label="Perfil de Twitter" class="social-icon twitter">
+            <a href="https://x.com/ElvisTe78827257" aria-label="Perfil de Twitter" class="social-icon twitter">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-              </svg>
-            </a>
-            <a href="https://discord.gg/icedkto" aria-label="Servidor de Discord" class="social-icon discord">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
               </svg>
             </a>
           </div>
@@ -186,7 +183,7 @@
     function updateThemeIcon(theme) {
       themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
       
-      // Update status bar color to match hero section
+
       const statusBarColor = theme === 'dark' ? '#1e293b' : '#ffffff';
       const statusBarStyle = theme === 'dark' ? 'default' : 'default';
       
@@ -194,6 +191,119 @@
       document.querySelector('meta[name="msapplication-navbutton-color"]').setAttribute('content', statusBarColor);
       document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute('content', statusBarStyle);
     }
+
+
+    const translations = {
+      'en': {
+        'title': 'Personal Portfolio',
+        'profession': 'Developer',
+        'nav_about': 'About me',
+        'nav_projects': 'Projects',
+        'nav_contact': 'Contact',
+        'about_title': 'About me',
+        'about_description': 'I am Gustavo, graduated with a TSU in Information Technology and Software Development and Management Engineering. I have experience in frontend and backend, with mastery of relational and non-relational databases (MySQL, PostgreSQL, MongoDB) and technologies like C#, .NET, JavaScript, TypeScript, Angular, React, Node.js, Python, React Native, AWS, Git and Docker. Currently, I am learning C++ to expand my development skills.',
+        'skills_title': 'Technical skills',
+        'projects_title': 'Projects',
+        'project1_title': 'Steam-Tracker',
+        'project1_description': 'Website to view Steam user statistics',
+        'project2_title': 'DiCTSA WEB',
+        'project2_description': 'Corporate website for DiCTSA company with modern and responsive design',
+        'project3_title': 'Upcoming projects',
+        'project3_description': 'Currently working on new ideas and innovative projects to expand my portfolio',
+        'contact_title': 'Contact',
+        'btn_demo': 'View Demo',
+        'tag_development': 'In development',
+        'tag_coming_soon': 'Coming soon',
+      },
+      'es': {
+        'title': 'Portfolio Personal',
+        'profession': 'Desarrollador',
+        'nav_about': 'Sobre mí',
+        'nav_projects': 'Proyectos',
+        'nav_contact': 'Contacto',
+        'about_title': 'Sobre mí',
+        'about_description': 'Soy Gustavo, egresado de TSU en Tecnologías de la Información e Ingeniería en Desarrollo y Gestión de Software. Tengo experiencia en frontend y backend, con dominio de bases de datos relacionales y no relacionales (MySQL, PostgreSQL, MongoDB) y tecnologías como C#, .NET, JavaScript, TypeScript, Angular, React, Node.js, Python, React Native, AWS, Git y Docker. Actualmente, estoy aprendiendo C++ para ampliar mis habilidades en desarrollo.',
+        'skills_title': 'Habilidades técnicas',
+        'projects_title': 'Proyectos',
+        'project1_title': 'Steam stats',
+        'project1_description': 'Sitio web para ver las estadísticas de un usuario de Steam',
+        'project2_title': 'DiCTSA WEB',
+        'project2_description': 'Sitio web corporativo para la empresa DiCTSA con diseño moderno y responsivo',
+        'project3_title': 'Próximos proyectos',
+        'project3_description': 'Actualmente trabajando en nuevas ideas y proyectos innovadores para ampliar mi portafolio',
+        'contact_title': 'Contacto',
+        'btn_demo': 'Ver Demo',
+        'tag_development': 'En desarrollo',
+        'tag_coming_soon': 'Próximamente',
+        'tag_innovation': 'Innovación'
+      }
+    };
+
+    function detectLanguage() {
+      const browserLang = navigator.language || navigator.languages[0];
+      
+      
+      const langCode = browserLang.split('-')[0].toLowerCase();
+      
+
+      return translations.hasOwnProperty(langCode) ? langCode : 'es';
+    }
+
+
+    function applyTranslations(lang) {
+      const elements = document.querySelectorAll('[data-lang]');
+      
+      elements.forEach(element => {
+        const key = element.getAttribute('data-lang');
+        if (translations[lang] && translations[lang][key]) {
+          if (element.tagName === 'TITLE') {
+            document.title = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
+      });
+      
+      document.getElementById('html-element').setAttribute('lang', lang);
+    }
+
+
+    function initializeLanguage() {
+      const savedLang = localStorage.getItem('language');
+      
+      let finalLang;
+      if (savedLang && translations.hasOwnProperty(savedLang)) {
+        finalLang = savedLang;
+      } else {
+        finalLang = detectLanguage();
+        localStorage.setItem('language', finalLang);
+      }
+      
+      applyTranslations(finalLang);
+    }
+
+    window.changeLanguage = function(lang) {
+      if (translations.hasOwnProperty(lang)) {
+        applyTranslations(lang);
+        localStorage.setItem('language', lang);
+        console.log(`Idioma cambiado a: ${lang}`);
+      } else {
+        console.error(`Idioma no soportado: ${lang}`);
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeLanguage();
+      
+
+      const currentLang = localStorage.getItem('language') || detectLanguage();
+      console.log(`Idioma actual: ${currentLang}`);
+      
+ 
+      document.dispatchEvent(new CustomEvent('languageChanged', {
+        detail: { language: currentLang }
+      }));
+    });
   </script>
 </body>
 </html>

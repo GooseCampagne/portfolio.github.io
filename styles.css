@@ -71,8 +71,8 @@ section::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 2rem;
+  right: 2rem;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
@@ -368,6 +368,7 @@ header.hidden {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  align-items: stretch;
 }
 
 .project-card {
@@ -379,6 +380,10 @@ header.hidden {
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  justify-content: space-between;
 }
 
 .project-card::before {
@@ -403,17 +408,31 @@ header.hidden {
   transform: scaleX(1);
 }
 
+.project-card > * {
+  margin-bottom: 0;
+}
+
 .project-card h3 {
   color: var(--accent);
   margin-bottom: 0.75rem;
   font-size: 1.3rem;
+  flex-shrink: 0;
 }
 
 .project-card p {
   color: var(--text-light);
-  margin-bottom: 1.25rem;
   font-size: 0.95rem;
   line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1.25rem;
+  min-height: 3.6rem;
+}
+
+.project-card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .tech-list {
@@ -421,6 +440,7 @@ header.hidden {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.25rem;
+  flex-shrink: 0;
 }
 
 .tech-tag {
@@ -446,6 +466,9 @@ header.hidden {
 .project-links {
   display: flex;
   gap: 1rem;
+  margin-top: auto;
+  flex-shrink: 0;
+  justify-content: flex-start;
 }
 
 .btn {
@@ -596,6 +619,10 @@ footer::before {
 
 @media (max-width: 768px) {
   .container { padding: 0 1rem; }
+  section::before {
+    left: 1rem;
+    right: 1rem;
+  }
   main { padding-top: 7rem; }
   .profile-overlay { width: 70px; height: 70px; top: 0.75rem; right: 0.75rem; }
   header { padding: 1rem 0; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
@@ -614,11 +641,11 @@ footer::before {
   .tech-badges { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 0.5rem; margin-top: 0.75rem; }
   .badge { padding: 0.6rem 0.8rem; font-size: 0.8rem; }
   .projects-grid { grid-template-columns: 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-  .project-card { padding: 1.5rem; }
-  .project-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-  .project-card p { font-size: 0.9rem; margin-bottom: 1rem; }
+  .project-card { padding: 1.5rem; min-height: 280px; }
+  .project-card h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+  .project-card p { font-size: 0.9rem; margin-bottom: 1rem; min-height: 3.2rem; }
   .tech-tag { padding: 0.3rem 0.7rem; font-size: 0.75rem; }
-  .project-links { flex-direction: column; gap: 0.75rem; }
+  .project-links { flex-direction: column; gap: 0.75rem; margin-top: auto; }
   .btn { padding: 0.6rem 1.25rem; font-size: 0.85rem; min-width: 100px; }
   .contact { padding-top: 1.5rem; }
   .contact-info p { font-size: 1.1rem; margin-bottom: 1.25rem; }
@@ -632,6 +659,10 @@ footer::before {
 
 @media (max-width: 480px) {
   .container { padding: 0 0.75rem; }
+  section::before {
+    left: 0.75rem;
+    right: 0.75rem;
+  }
   section { padding: 2rem 0; }
   main { padding-top: 6rem; }
   .profile-overlay { width: 60px; height: 60px; top: 0.5rem; right: 0.5rem; }
@@ -651,11 +682,11 @@ footer::before {
   .tech-badges { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 0.4rem; margin-top: 0.5rem; }
   .badge { padding: 0.5rem 0.6rem; font-size: 0.75rem; }
   .projects-grid { gap: 1rem; margin-top: 1.25rem; }
-  .project-card { padding: 1.25rem; }
-  .project-card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
-  .project-card p { font-size: 0.85rem; margin-bottom: 0.8rem; }
+  .project-card { padding: 1.25rem; min-height: 260px; }
+  .project-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+  .project-card p { font-size: 0.85rem; margin-bottom: 1rem; min-height: 2.8rem; }
   .tech-tag { padding: 0.25rem 0.6rem; font-size: 0.7rem; }
-  .project-links { gap: 0.6rem; }
+  .project-links { gap: 0.6rem; margin-top: auto; }
   .btn { padding: 0.5rem 1rem; font-size: 0.8rem; min-width: 90px; }
   .contact { padding-top: 1.25rem; }
   .contact-info p { font-size: 1rem; margin-bottom: 1rem; }
