@@ -3,17 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="msapplication-navbutton-color" content="#ffffff">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title data-lang="title">Portfolio Personal</title>
+  <meta name="theme-color" content="#101010">
+  <meta name="msapplication-navbutton-color" content="#101010">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title data-lang="title">Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <img class="profile-overlay" src="assets/pfp.jpeg" alt="Foto de perfil" loading="lazy">
-  <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-    <span class="theme-icon">🌙</span>
-  </button>
   
   <header>
     <nav class="nav-container">
@@ -162,34 +159,6 @@
       
       lastScrollTop = scrollTop;
     });
-
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = themeToggle.querySelector('.theme-icon');
-    const body = document.body;
-
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    body.classList.add(savedTheme);
-    updateThemeIcon(savedTheme);
-
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      const currentTheme = body.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', currentTheme);
-      updateThemeIcon(currentTheme);
-    });
-
-    function updateThemeIcon(theme) {
-      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-      
-
-      const statusBarColor = theme === 'dark' ? '#1e293b' : '#ffffff';
-      const statusBarStyle = theme === 'dark' ? 'default' : 'default';
-      
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', statusBarColor);
-      document.querySelector('meta[name="msapplication-navbutton-color"]').setAttribute('content', statusBarColor);
-      document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute('content', statusBarStyle);
-    }
-
 
     const translations = {
       'en': {
