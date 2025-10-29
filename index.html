@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Animated background elements -->
+  <div class="bg-decoration"></div>
+  
   <img class="profile-overlay" src="assets/pfp.jpeg" alt="Foto de perfil" loading="lazy">
   
   <header>
@@ -19,6 +22,11 @@
         <h1>Gustavo Campagne</h1>
         <p class="profession" data-lang="profession">Desarrollador</p>
       </div>
+      <button class="hamburger" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
       <ul class="nav-links">
         <li><a href="#about" data-lang="nav_about">Sobre mí</a></li>
         <li><a href="#projects" data-lang="nav_projects">Proyectos</a></li>
@@ -76,7 +84,7 @@
               </div>
             </div>
             <div class="project-links">
-              <a href="https://steam-tracker-two.vercel.app/" class="btn btn-primary" data-lang="btn_demo">Ver Demo</a>
+              <a href="https://steam-stats-gcc.vercel.app/" class="btn btn-primary" data-lang="btn_demo">Ver Demo</a>
             </div>
           </article>
 
@@ -115,7 +123,7 @@
       <div class="container">
         <h2 data-lang="contact_title">Contacto</h2>
         <div class="contact-info">
-            <p><a href="mailto:gustavodante202@gmail.com" aria-label="Enviar email">send email</a></p>
+            <p><a href="mailto:gustavodante202@gmail.com" aria-label="Enviar email">gustavodante202@gmail.com</a></p>
           <div class="social-links">
             <a href="https://github.com/GooseCampagne" aria-label="Perfil de GitHub" class="social-icon github">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -148,6 +156,20 @@
     let lastScrollTop = 0;
     const header = document.querySelector('header');
     const scrollThreshold = 100;
+    const backToTopButton = document.getElementById('back-to-top');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close nav menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
 
     window.addEventListener('scroll', () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -159,6 +181,18 @@
       }
       
       lastScrollTop = scrollTop;
+
+      // Back to top button visibility
+      if (scrollTop > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll to top
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     const translations = {
@@ -273,5 +307,8 @@
       }));
     });
   </script>
+  <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
 </body>
 </html>
