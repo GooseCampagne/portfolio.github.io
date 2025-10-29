@@ -831,7 +831,12 @@ footer::before {
   }
   main { padding-top: 8rem; }
   .profile-overlay { width: 75px; height: 75px; top: 1rem; right: 1rem; }
-  header { padding: 1.25rem 0; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  header {
+    padding: 1.25rem 0;
+    background: var(--bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
   .nav-brand h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
   .profession { font-size: 0.9rem; }
   h2 { font-size: 1.75rem; margin-bottom: 1.75rem; }
